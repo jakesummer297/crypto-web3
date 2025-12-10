@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Web3 Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <h1>Web3 Python Dashboard</h1>
+  <p>Enter an Ethereum address to check its balance.</p>
+
+  <form method="POST">
+    <input type="text" name="address" placeholder="0x..." value="{{ address or '' }}" required>
+    <button type="submit">Check balance</button>
+  </form>
+
+  {% if balance_eth is not none %}
+    <h2>Balance</h2>
+    <p><strong>Address:</strong> {{ address }}</p>
+    <p><strong>ETH:</strong> {{ balance_eth }}</p>
+    <p><strong>Wei:</strong> {{ balance_wei }}</p>
+  {% endif %}
+</body>
+</html>
